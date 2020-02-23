@@ -1,0 +1,26 @@
+{
+  "name": "2021jhe",
+  "version": "1.0.0",
+  "description": "Website for Web Class",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.0",
+    "path": "^0.12.7",
+    "express-useragent": "^1.0.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/J4z0n/2021jhe.git"
+  },
+  "author": "Jazon He",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/J4z0n/2021jhe/issues"
+  },
+  "homepage": "https://github.com/J4z0n/2021jhe#readme"
+}

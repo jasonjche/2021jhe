@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>Weather at {{{city}}}, {{{state}}}</title>
+   <body>
+      <p>Weather Forecast at {{{city}}}, {{{state}}}</p>
+      <ul>
+         {{#each forecast}}
+         <li>{{{this}}}</li>
+         {{/each}}
+      </ul>
+   </body>
+   </head>
+</html>
