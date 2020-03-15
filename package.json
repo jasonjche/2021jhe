@@ -4,6 +4,7 @@
   "description": "Website for Web Class",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "express-useragent": "^1.0.13",
     "font-awesome": "^4.7.0",

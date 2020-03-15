@@ -1,16 +1,15 @@
-function purchase() {
-    var url = new URL('https://user.tjhsst.edu/2021jhe/votingWorker');
-    var salad_chx = document.querySelector('input[name=salad]:checked').value;
-    var main_chx = document.querySelector('input[name=main]:checked').value;
+function update() {
+    var choice = document.querySelector('input[name=choice]:checked').value;
     var params = {
-        'salad': salad_chx,
-        'main': main_chx
+        choice: choice
     };
-    Object.keys(params).forEach(function(elem) {
-        url.searchParams.append(elem, params[elem]);
-    });
-    console.log(url.href);
-    fetch(url)
+    fetch('votingWorker', {
+        method: 'POST',
+        body: JSON.stringify(params),
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    })
         .then((response) => {
             return response.json();
         })
@@ -20,6 +19,39 @@ function purchase() {
 }
 
 function update_total(data) {
-    var span = document.getElementById('purchase_tot');
-    span.innerHTML = data.cost;
+    var span = document.getElementById('result');
+    var poll = document.getElementById('poll');
+    poll.classList.add('d-none');
+    span.innerHTML = JSON.stringify(data);
+    showChart(data);
+}
+
+function showChart(input) {
+    var from = 20;
+    var to = 100;
+    var stepSize = (to - from) / Object.keys(input).length;
+    var colors = [...Array(Object.keys(input).length).keys()].map(
+        elem => `hsla(0, 100%, ${from + elem * stepSize}%, .8)`
+    );
+    results = new Chart($('#results'), {
+        type: 'pie',
+        data: {
+            datasets: [
+                {
+                    data: Object.values(input),
+                    backgroundColor: colors,
+                },
+            ],
+            labels: Object.keys(input).map(
+                elem => elem.charAt(0).toUpperCase() + elem.slice(1)
+            ),
+        },
+        options: {
+            legend: {
+                labels: {
+                    fontColor: '#FFFFFF'
+                }
+            }
+        },
+    });
 }

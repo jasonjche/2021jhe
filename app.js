@@ -6,10 +6,15 @@ var hbs = require('hbs');
 var https = require('https');
 var morgan = require('morgan');
 var controllers = require('./controllers');
+var bodyParser = require('body-parser');
 
 // -------------- express initialization -------------- //
 app.set('port', process.env.PORT || 12475);
 app.use(express.static('static'));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(morgan('short'));
 
 //tell express that the view engine is hbs

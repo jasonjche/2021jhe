@@ -1,26 +1,41 @@
 var fs = require('fs');
 
+var data = JSON.parse(
+    fs.readFileSync(__dirname + '/../data/vote.json', 'utf-8')
+);
+
 module.exports.run_setup = function(app) {
-var prices = {
-    'pizza': 2,
-    'soda': 1,
-    'snacks': 1,
-    'samosa': 2,
-    'tofu': 5,
-    'salmon': 9
-};
-
-app.get('/votingForm', (req, res) => {
-    res.render('partials/template', {name : 'Voting', content : fs.readFileSync(__dirname + '/../views/votingForm.hbs')});
-});
-
-app.get('/votingWorker', (req, res) => {
-    console.log(req.query);
-    var salad_choice = req.query.salad;
-    var main_choice = req.query.main;
-    var total = prices[salad_choice] + prices[main_choice];
-    res.json({
-        'cost': total
+    app.get('/votingForm', (req, res) => {
+        res.render('partials/template', {
+            name: 'Voting',
+            content: fs.readFileSync(__dirname + '/../views/votingForm.hbs'),
+            scripts: [
+                {
+                    src:
+                        'https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js',
+                    integrity:
+                        'sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=',
+                    crossorigin: 'anonymous',
+                },
+                {
+                    src: '../js/demo.js', 
+                },
+            ],
+        });
     });
-});
+
+    app.post('/votingWorker', (req, res) => {
+        var choice = req.body.choice;
+        data[choice]++;
+        fs.writeFile(
+            __dirname + '/../data/vote.json',
+            JSON.stringify(data),
+            'utf-8',
+            err => {
+                if (err) console.log(err);
+            }
+        );
+        console.log(data);
+        res.json(data);
+    });
 };
