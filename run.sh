@@ -1,2 +1,2 @@
 #!/bin/sh
-nodemon index.js
+nodemon app.js
