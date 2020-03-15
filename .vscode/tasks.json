@@ -1,0 +1,20 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "options": { "cwd": "." },
+    "tasks": [
+        {
+            "label": "nodemon",
+            "type": "shell",
+            "command": "nodemon app.js",
+            "group": "build"
+        },
+        // {
+        //     "label": "sass",
+        //     "type": "shell",
+        //     "command": "sass --watch ./sass/main.scss ./static/css/main.css --style compressed",
+        //     "group": "build"
+        // }
+    ]
+}
