@@ -8,28 +8,64 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/navbar.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/fonts.css" media="screen" />
 </head>
 
 <body class="{{template}}">
-    {{> navBar}}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand" href="home">2021jhe</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="mylabs" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Labs
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="mylabs">All Labs</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#"><del>Pets</del></a>
+                        <a class="dropdown-item" href="#"><del>Number Facts</del></a>
+                        <a class="dropdown-item" href="weather">Weather Forecast</a>
+                        <a class="dropdown-item" href="madLibsForm">Mad Libs</a>
+                        <a class="dropdown-item" href="votingForm">Survey</a>
+                        <a class="dropdown-item" href="corona">Corona Counter</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="fun">Fun</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--{{> navBar}}-->
     <div class="container">
         {{{content}}}
     </div>
     {{> footer}}
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    {{#each scripts}}
+    <script src="{{src}}" {{#if integrity}}integrity="{{integrity}}" {{/if}} {{#if crossorigin}}
+        crossorigin="{{crossorigin}}" {{/if}}></script>
+    {{/each}}
 </body>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
-{{#each scripts}}
-<script src="{{src}}" {{#if integrity}}integrity="{{integrity}}" {{/if}} {{#if crossorigin}}
-    crossorigin="{{crossorigin}}" {{/if}}></script>
-{{/each}}
+
 
 </html>
