@@ -8,7 +8,7 @@ var camera = new THREE.PerspectiveCamera(
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
-document.querySelector('.container-fluid').appendChild(renderer.domElement); 
+document.querySelector('.container').appendChild(renderer.domElement); 
 
 var geometry = new THREE.BoxGeometry();
 var material = new THREE.MeshBasicMaterial({ color: '#FF0000' });
@@ -17,10 +17,12 @@ scene.add(cube);
 
 camera.position.z = 5;
 
+var color = 0;
 function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
     cube.rotation.x += 0.01;
     cube.rotation.y += 0.01;
+    cube.material.color.setHSL((color++ % 360) / 360, 1, 0.5);
 }
 animate();

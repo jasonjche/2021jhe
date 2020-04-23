@@ -1,79 +1,15 @@
 <h1>Labs</h1>
 <div class="container">
    <div class="row">
+   {{#each labs}}
       <div class="card" style="width: 18rem;">
-         <img src="https://i.imgur.com/7FaOird.gif" class="card-img-top" alt="...">
+         <img src="{{image}}" class="card-img-top" alt="...">
          <div class="card-body">
-            <h5 class="card-title">Pets</h5>
-            <p class="card-text">Have some fun looking at cute pictures of dogs and cats!</p>
-            <ul class="list-group list-group-flush">
-               <a href="cat.jpg">
-                  <li class="list-group-item">Cat</li>
-               </a>
-               <a href="dog.jpg">
-                  <li class="list-group-item">Dog</li>
-               </a>
-            </ul>
+            <h5 class="card-title">{{name}}</h5>
+            <p class="card-text">{{description}}<p>
+                  <a href="{{link}}" class="btn btn-primary">{{name}}</a>
          </div>
       </div>
-      <div class="card" style="width: 18rem;">
-         <img src="images\numbers.gif" class="card-img-top" alt="...">
-         <div class="card-body">
-            <h5 class="card-title">Number Facts</h5>
-            <p class="card-text">Learn some interesting facts about the numbers 1-10!</p>
-            <div class="btn-group" role="group">
-               <ul class="list-group list-group-flush">
-                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                     <a class="dropdown-item" href="#">1</a>
-                     <a class="dropdown-item" href="#">2</a>
-                     <a class="dropdown-item" href="#">3</a>
-                     <a class="dropdown-item" href="#">4</a>
-                     <a class="dropdown-item" href="#">5</a>
-                     <a class="dropdown-item" href="#">6</a>
-                     <a class="dropdown-item" href="#">7</a>
-                     <a class="dropdown-item" href="#">8</a>
-                     <a class="dropdown-item" href="#">9</a>
-                     <a class="dropdown-item" href="#">10</a>
-                  </div>
-               </ul>
-            </div>
-         </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-         <img src="https://thumbs.gfycat.com/IdenticalCorruptFluke-max-1mb.gif" class="card-img-top" alt="...">
-         <div class="card-body">
-            <h5 class="card-title">Weather Forecast</h5>
-            <p class="card-text">Figure out the weather based on Longitude and Lattitude coordinates!<p>
-                  <a href="weather" class="btn btn-primary">Weather Forecast</a>
-         </div>
-      </div>
-   </div>
-   <div class="row">
-      <div class="card" style="width: 18rem;">
-         <img src="https://www.abine.com/blog/wp-content/uploads/2014/04/data-breaches.png" class="card-img-top"
-            alt="...">
-         <div class="card-body">
-            <h5 class="card-title">Mad Libs</h5>
-            <p class="card-text">Fill out a Mad Libs!<p>
-                  <a href="madLibsForm" class="btn btn-primary">Mad Libs</a>
-         </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-         <img src="https://thumbs.gfycat.com/AdeptGargantuanAfricanwilddog-max-1mb.gif" class="card-img-top" alt="...">
-         <div class="card-body">
-            <h5 class="card-title">Survey</h5>
-            <p class="card-text">Vote on a highly controversial poll!<p>
-                  <a href="votingForm" class="btn btn-primary">Poll</a>
-         </div>
-      </div>
-      <div class="card" style="width: 18rem;">
-         <img src="https://i.pinimg.com/originals/69/4f/81/694f81580f019ea116812a07968ae140.jpg" class="card-img-top"
-            alt="...">
-         <div class="card-body">
-            <h5 class="card-title">Corona Counter</h5>
-            <p class="card-text">Get updated on the latest counts for each individual country!<p>
-                  <a href="corona" class="btn btn-primary">Corona Counter</a>
-         </div>
-      </div>
+   {{/each}}
    </div>
 </div>

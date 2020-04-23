@@ -1,6 +1,7 @@
 body { margin: 0; }
 canvas { display: block; }
 
-.container-fluid {
+.container {
+    margin: 0;
     padding:0;
 }
