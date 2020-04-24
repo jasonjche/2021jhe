@@ -3,24 +3,24 @@
         "link": "weather",
         "name": "Weather",
         "description": "Figure out the weather based on Longitude and Lattitude coordinates!",
-        "image": "sun.png"
+        "image": "sun.gif"
     },
     {
         "link": "madlibsForm",
         "name": "Mad Libs",
         "description": "Fill out a Mad Libs!",
-        "image": "madlibs.png"
+        "image": "madlibs.gif"
     },
     {
         "link": "votingForm",
         "name": "Survey",
         "description": "Vote on a highly controversial poll!",
-        "image": "pizza.png"
+        "image": "pizza.gif"
     },
     {
         "link": "corona",
         "name": "Corona Counter",
         "description": "Get updated on the latest counts for each individual country!",
-        "image": "globe.png"
+        "image": "globe.gif"
     }
 ]

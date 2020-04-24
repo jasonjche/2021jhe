@@ -1,15 +1,15 @@
 <h1>Labs</h1>
 <div class="container">
    <div class="row">
-   {{#each labs}}
-      <div class="card" style="width: 18rem;">
-         <img src="{{image}}" class="card-img-top" alt="...">
+      {{#each labs}}
+      <div class="card text-center my-4 mx-3 flex-grow-1" style="width: 20rem; max-width: 20rem;">
+         <img src="images/{{image}}" class="card-img-top" alt="...">
          <div class="card-body">
             <h5 class="card-title">{{name}}</h5>
             <p class="card-text">{{description}}<p>
-                  <a href="{{link}}" class="btn btn-primary">{{name}}</a>
+                  <a href="{{link}}" class="stretched-link"></a>
          </div>
       </div>
-   {{/each}}
+      {{/each}}
    </div>
 </div>

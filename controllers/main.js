@@ -10,7 +10,8 @@ module.exports.run_setup = function (app) {
     app.get('/home', (req, res) => {
         res.render('partials/template', {
             name: 'Home',
-            content: fs.readFileSync(__dirname + '/../views/index.hbs'),
+            content: fs.readFileSync(__dirname + '/../views/home.hbs'),
+            styles: ['css/home.css'],
         });
     });
     app.get('/labs', (req, res) => {
