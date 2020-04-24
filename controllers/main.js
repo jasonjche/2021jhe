@@ -12,7 +12,7 @@ module.exports.run_setup = function (app) {
             name: 'Home',
             content: fs.readFileSync(__dirname + '/../views/home.hbs'),
             styles: ['css/home.css'],
-        });
+        });6
     });
     app.get('/labs', (req, res) => {
         var template = hbs.handlebars.compile(

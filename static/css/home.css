@@ -18,35 +18,35 @@ body {
 }
 
 .bg1{
-    background-image: url('/images/homepage/one.gif');
+    background-image: url('../images/homepage/one.gif');
 }
 
 .bg2{
-    background-image: url('/images/homepage/two.gif');
+    background-image: url('../images/homepage/two.gif');
 }
 
 .bg3{
-    background-image: url('/images/homepage/three.gif');
+    background-image: url('../images/homepage/three.gif');
 }
 
 .bg4{
-    background-image: url('/images/homepage/four.gif');
+    background-image: url('../images/homepage/four.gif');
 }
 
 .bg5{
-    background-image: url('/images/homepage/five.gif');
+    background-image: url('../images/homepage/five.gif');
 }
 
 .bg6{
-    background-image: url('/images/homepage/six.gif');
+    background-image: url('../images/homepage/six.gif');
 }
 
 .bg7{
-    background-image: url('/images/homepage/seven.gif');
+    background-image: url('../images/homepage/seven.gif');
 }
 
 .bg8{
-    background-image: url('/images/homepage/eight.gif');
+    background-image: url('../images/homepage/eight.gif');
 }
 
 h1{
